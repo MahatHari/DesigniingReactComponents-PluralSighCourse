@@ -1,11 +1,15 @@
-import React from 'react';
+import React, { Component } from 'react';
+import withData from './withData';
 
-function Speaker() {
+function Speakers({ speakers }) {
   return (
     <div>
-      <img src='images/speakers.png' alt='' />
+      {speakers.map((speaker) => {
+        const { imageSrc, name } = speaker;
+        return <img src={`images/${imageSrc}.png`} alt={name} key={name} />;
+      })}
     </div>
   );
 }
-
-export default Speaker;
+const maxSpeakersToShow = 2;
+export default withData(maxSpeakersToShow)(Speakers);
