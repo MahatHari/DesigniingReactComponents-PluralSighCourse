@@ -9,7 +9,7 @@ function Page() {
       <Header />
       <Menu />
       <SpeakerSearchBar />
-      <Speaker />
+      <SpeakerV2 />
       <Footer />
     </div>
   );
